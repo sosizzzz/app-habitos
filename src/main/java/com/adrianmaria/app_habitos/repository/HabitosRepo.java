@@ -36,14 +36,28 @@ public class HabitosRepo {
 
     public Habitos deleteById(int id){
 
-        for (Habitos i:habitos) {
-            if (i.getId()==id){
-                habitos.remove(id-1);
-                return new Habitos(0,"Elimindado correctamente");
-            }
+        Habitos habito = findById(id);
+
+        if (habito.getId() != 0) {
+            habitos.remove(habito);
+            return new Habitos(0,"Elimindado correctamente");
+
         }
 
         return new Habitos(0, "Error al eliminar");
+    }
+
+    public Habitos update(int id, Habitos datosNuevos){
+
+        for (Habitos i:habitos){
+            if (i.getId() == id) {
+                i.setNombre(datosNuevos.getNombre());
+
+                return i;
+            }
+        }
+
+        return new Habitos(0, "No encontrado");
     }
 
 }
