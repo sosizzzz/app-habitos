@@ -47,7 +47,7 @@ public class HabitosRepo {
         return new Habitos(0, "Error al eliminar");
     }
 
-    public Habitos update(int id, Habitos datosNuevos){
+    public Habitos updateById(int id, Habitos datosNuevos){
 
         for (Habitos i:habitos){
             if (i.getId() == id) {

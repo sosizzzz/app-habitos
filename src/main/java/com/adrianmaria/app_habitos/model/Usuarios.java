@@ -9,6 +9,7 @@ public class Usuarios {
     private String email;
     private LocalDate createdAt;
 
+    // Para la creacion completa de Usuarios
     public Usuarios(int id, String username, String email, LocalDate createdAt) {
         this.id = id;
         this.username = username;
@@ -16,11 +17,19 @@ public class Usuarios {
         this.createdAt = createdAt;
     }
 
+    // Para devolver nuevos Usuarios como error
     public Usuarios(int id, String username) {
         this.id = id;
         this.username = username;
     }
 
+    // Para la actualizacion de Usuarios
+    public Usuarios(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    // Para la creacion de Usuarios vacios
     public Usuarios() {
     }
 

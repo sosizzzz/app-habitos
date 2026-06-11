@@ -18,7 +18,15 @@ public class UsuariosService {
         return repo.findAll();
     }
 
+    public Usuarios findById (int id){
+        return repo.findById(id);
+    }
 
+    public Usuarios deletebyId(int id) {
+        return repo.deleteById(id);
+    }
 
-
+    public Usuarios updateById(int id, Usuarios nuevosDatos){
+       return repo.updateById(id, nuevosDatos);
+    }
 }

@@ -6,11 +6,18 @@ public class Habitos {
     private int id;
     private String nombre;
 
+    // Constructor completo
     public Habitos(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
+    //Constructor para updates
+    public Habitos(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Constructor vacio
     public Habitos() {
     }
 

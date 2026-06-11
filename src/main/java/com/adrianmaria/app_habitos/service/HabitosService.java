@@ -13,9 +13,7 @@ public class HabitosService {
     @Autowired
     HabitosRepo repo;
 
-    public HabitosService(HabitosRepo repo) {
-        this.repo = repo;
-    }
+
 
     public List<Habitos> findAll(){
         return repo.findAll();
@@ -27,5 +25,9 @@ public class HabitosService {
 
     public Habitos deleteById(int id){
         return repo.deleteById(id);
+    }
+
+    public Habitos updateById(int id, Habitos nuevosDatos){
+        return repo.updateById(id, nuevosDatos);
     }
 }

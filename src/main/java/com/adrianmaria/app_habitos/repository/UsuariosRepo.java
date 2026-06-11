@@ -35,8 +35,34 @@ public class UsuariosRepo {
             }
         }
 
+        return new Usuarios(0,"No encontrado");
+
+    }
+
+    public Usuarios deleteById(int id){
+
+        Usuarios usuario = findById(id);
+
+        if (usuario.getId() != 0) {
+            usuarios.remove(usuario);
+            return new Usuarios(0, "Usuario borrado");
+        }
+
+        return usuario;
+    }
+
+    public Usuarios updateById(int id, Usuarios nuevosDatos){
+
+        for (Usuarios u:usuarios){
+            if (u.getId() == id){
+                u.setUsername(nuevosDatos.getUsername());
+                u.setEmail(nuevosDatos.getEmail());
+                return u;
+            }
+        }
 
         return new Usuarios(0,"No encontrado");
+
 
     }
 }
